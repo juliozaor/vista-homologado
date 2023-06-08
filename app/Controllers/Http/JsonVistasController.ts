@@ -59,8 +59,8 @@ export default class JsonVistasController {
 
        
 
-    let id1 = 1
-    let nombre_Documento1 = 'Cédula de Ciudadanía'
+    let id1 ;
+    let nombre_Documento1 = ''
     if(vista.rows[0].TIPO_DOC_REP_LEGAL == 'CEDULA'){
       id1 = 1;
       nombre_Documento1 = 'Cédula de Ciudadanía'
@@ -89,12 +89,15 @@ export default class JsonVistasController {
       //VIGILADO
       nit: `${(vista.rows[0].NUMERO_DOCUMENTO) ?? ''}-${(vista.rows[0].DIGITO_VERIFICACION) ?? ''}`,
       razon_Social: (vista.rows[0].NOMBRE_VIGILADO) ?? '',
+      codigo_Departamento: (vista.rows[0].ID_DEPARTAMENTO) ?? '',
       nombre_Departamento: (vista.rows[0].NOMBRE_DEPTO) ?? '',
+      codigo_Ciudad: (vista.rows[0].ID_MUNICIPIO) ?? '',
       nombre_Ciudad: (vista.rows[0].NOMBRE_MUNICIPIO) ?? '',
       telefono: (vista.rows[0].TELEFONO) ?? '',
-      mail_establecimiento: (vista.rows[0].CORREO_ELECTRONICO) ?? '',
+      mail_Establecimiento: (vista.rows[0].CORREO_ELECTRONICO) ?? '',
       dir_Establecimiento: (vista.rows[0].DIRECCION) ?? '',
       tipo_Sociedad:  '',
+      tipo_Sociedad_Nombre:  '',
 
       //REPRESENTANTE
       id1,
