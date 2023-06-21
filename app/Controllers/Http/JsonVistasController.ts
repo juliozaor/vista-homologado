@@ -11,17 +11,10 @@ export default class JsonVistasController {
     try {
       oracledb.initOracleClient();
 
-      /* connection = await oracledb.getConnection({
-        user: "USU_CONSULTA",
-        password: "USU_CONSULTA2023",  // contains the hr schema password
-        connectString: "172.16.2.55:1521/VIGIAPRO.supertransporte.local",
-        encoding: 'UTF-8'
-
-      }); */
       connection = await oracledb.getConnection({
         user: "USU_CONSULTA",
         password: "USU_CONSULTA2023",  // contains the hr schema password
-        connectString: "172.16.1.107:1521/Data",
+        connectString: "172.16.2.55:1521/VIGIAPRO.supertransporte.local",
         encoding: 'UTF-8'
 
       });
@@ -37,8 +30,7 @@ export default class JsonVistasController {
 
 
 
-    //let consulta = "select * from VIGIA.VW_HOMOLOGADOS_SEDES where NUMERO_DOCUMENTO='" + documento + "'";
-    let consulta = "SELECT * FROM fuentes_externas.VW_HOMOLOGADOS where NUMERO_DOCUMENTO='" + documento + "'";
+    let consulta = "select * from VIGIA.VW_HOMOLOGADOS_SEDES where NUMERO_DOCUMENTO='" + documento + "'";
 
 
     let vista
